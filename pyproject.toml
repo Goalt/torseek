@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torrseek"
+version = "0.1.0"
+description = "Terminal (curses) torrent search, works in iSH"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "pyte"]
+
+[project.scripts]
+torrseek = "torrseek.__main__:main"
+
+[tool.setuptools]
+packages = ["torrseek", "torrseek.api", "torrseek.ui"]
+
+[tool.setuptools.package-data]
+torrseek = ["fixtures/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
